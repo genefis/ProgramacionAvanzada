@@ -1,0 +1,51 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Presentacion;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Usuario
+ */
+public class ArchivoBin {
+     void menuArchivoTexto() {
+
+        Scanner sc = new Scanner(System.in);
+        int opcion = 0;
+        while (opcion < 4) {
+            System.out.println("Agregar");
+            System.out.println("Eliminar");
+            System.out.println("Listar");
+            System.out.println("Salir");
+            opcion = sc.nextInt();
+            switch (opcion) {
+                case 1:
+                    AgregarClienteBin();
+                    break;
+                case 2:
+                    EliminarClienteBin();
+                    break;
+                case 3:
+                    ListarClienteBin();
+                    break;
+            }
+        }
+
+    }
+
+    private void AgregarClienteBin() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void EliminarClienteBin() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void ListarClienteBin() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+}
