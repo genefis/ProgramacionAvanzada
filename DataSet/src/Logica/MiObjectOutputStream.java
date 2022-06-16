@@ -9,9 +9,9 @@ import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 
 /**
- * Redefinici�n de la clase ObjectOuputStream para que no escriba una cabecera
- * al inicio del Stream.
- * @author  
+ *
+ * Autor: Génesis Gonzalez
+ * Fecha:15/06/2022
  *
  */
 public class MiObjectOutputStream extends ObjectOutputStream

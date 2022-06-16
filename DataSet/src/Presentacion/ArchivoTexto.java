@@ -6,10 +6,12 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.Scanner;
 
-/*
-*
-* @author Erika Masa
- * Fecha 14/06/2022
+
+/**
+ *
+ * Autor: Génesis Gonzalez
+ * Fecha:15/06/2022
+ *
  */
 public class ArchivoTexto {
 

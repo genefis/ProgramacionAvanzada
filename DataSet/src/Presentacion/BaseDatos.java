@@ -7,9 +7,12 @@ package Presentacion;
 
 import java.util.Scanner;
 
+
 /**
  *
- * @author Usuario
+ * Autor: Génesis Gonzalez
+ * Fecha:15/06/2022
+ *
  */
 public class BaseDatos {
      void menuArchivoTexto() {

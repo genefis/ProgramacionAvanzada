@@ -4,9 +4,12 @@ import Archivos.ClienteTxt;
 import dataset.Cliente;
 import java.io.IOException;
 
+
 /**
  *
- * @author Usuario
+ * Autor: Génesis Gonzalez
+ * Fecha:15/06/2022
+ *
  */
 public class LogClienteTxt {
 

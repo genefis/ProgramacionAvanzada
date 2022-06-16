@@ -11,9 +11,12 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.Scanner;
 
+
 /**
  *
- * @author Usuario
+ * Autor: Génesis Gonzalez
+ * Fecha:15/06/2022
+ *
  */
 public class ArchivoBin {
     static LogClientebin LogClienteBin = new LogClienteBin();

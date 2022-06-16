@@ -11,9 +11,12 @@ import java.util.Date;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
+
 /**
  *
- * @author Usuario
+ * Autor: Génesis Gonzalez
+ * Fecha:15/06/2022
+ *
  */
 public class ClienteTxt {
 
