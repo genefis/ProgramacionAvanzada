@@ -3,8 +3,13 @@ package Archivos;
 import dataset.Cliente;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Scanner;
+import java.util.StringTokenizer;
 
 /**
  *
@@ -12,22 +17,47 @@ import java.io.IOException;
  */
 public class ClienteTxt {
 
-    public static void ValidarId(Cliente cliente) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void AgregarCliente(Cliente cliente) throws IOException {
-        File f = new File("Cliente.txt ");
-
+    public boolean AgregarCliente(Cliente objcliente) throws IOException {
+        File f = new File("Cliente txt");
         FileWriter fw = new FileWriter(f, false);
-
         BufferedWriter bw = new BufferedWriter(fw);
-        
-        bw.write(Integer.toString(cliente.getCod())+",");
-        bw.write(cliente.getName()+",");
-        bw.write(String.valueOf(cliente.getFechaN()));
+        bw.write(Integer.toString(objcliente.getIdentidad()) + ",");
+        bw.write(objcliente.getNombres() + ",");
+        bw.write(String.valueOf(objcliente.getFechaInicio()) + "\n");
         bw.close();
         fw.close();
+        return true;
 
     }
+    public void leerClientes() {
+    }
+
+    public ArrayList<Cliente> leerClientes(ArrayList (<Cliente>) ArrayClientes ){
+      File f = new File("cliente.txt");
+        StringTokenizer st;
+        Scanner entrada = null;
+        String sCadena;
+        try {
+            entrada = new Scanner(f);
+            while (entrada.hasNext()) {
+                sCadena = entrada.nextLine();
+                st = new StringTokenizer(sCadena, ",");
+                while (st.hasMoreTokens()) {
+                    Cliente Objtmp = new Cliente(
+                            st.nextToken(), //nombre
+                            st.nextToken()
+                           
+
+                    );
+                    ArrayClientes.add(Objtmp);
+                }
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            entrada.close();
+        }
+        return ArrayClientes ;
+    }
+
 }

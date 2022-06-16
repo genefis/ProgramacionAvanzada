@@ -5,6 +5,10 @@
  */
 package Presentacion;
 
+import Logica.LogClienteBin;
+import dataset.Cliente;
+import java.io.IOException;
+import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -12,40 +16,70 @@ import java.util.Scanner;
  * @author Usuario
  */
 public class ArchivoBin {
-     void menuArchivoTexto() {
+    static LogClientebin LogClienteBin = new LogClienteBin();
+    public static void main(String[] args) {
+        AgregarClienteBin();
+        
+        
+    }
 
-        Scanner sc = new Scanner(System.in);
-        int opcion = 0;
-        while (opcion < 4) {
-            System.out.println("Agregar");
-            System.out.println("Eliminar");
-            System.out.println("Listar");
-            System.out.println("Salir");
-            opcion = sc.nextInt();
-            switch (opcion) {
+    private static void AgregarClienteBin() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void menuArchivoTexto() throws IOException {
+
+        Scanner in = new Scanner(System.in);
+
+        int op = 0;
+
+        while (op < 4) {
+            System.out.println("agregar:   1");
+            System.out.println("eliminar:  2");
+            System.out.println("listar:    3");
+            System.out.println("Salir:     4");
+            op = in.nextInt();
+
+            switch (op) {
                 case 1:
-                    AgregarClienteBin();
+                    AgregarCliente();
                     break;
                 case 2:
-                    EliminarClienteBin();
+                    EliminarCliente();
                     break;
                 case 3:
-                    ListarClienteBin();
+                    ListarCliente();
+                    break;
+
+                default:
                     break;
             }
+
+        }
+    }
+
+    public void AgregarCliente() throws IOException {
+
+        Cliente cliente = new Cliente();
+        cliente.setName("Erika");
+        cliente.setFechaN(new Date());
+        cliente.setCod(1);
+        if (LogCliente.ValidarId(cliente)) {
+            System.out.println("Clinte agregado con exito ");
+        } else {
+            System.out.println("cliente no agregado sin exito ");
         }
 
     }
 
-    private void AgregarClienteBin() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void EliminarCliente() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    private void EliminarClienteBin() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void ListarCliente() {
+
+        LogCliente.ListarClientes();
+
     }
 
-    private void ListarClienteBin() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

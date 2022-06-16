@@ -15,9 +15,13 @@ public class LogClienteTxt {
     public void ValidarId(Cliente cliente) throws IOException {
         //Valida si el codigo es correcto
         if (cliente.getCod() > 0) {
-            clientetxt.AgregarCliente(cliente);
-
+            return clientetxt.AgregarCliente(cliente);
+            
         }
+            return false;
+    }
+    public void ListarClientes(){
+    
     }
 
 }

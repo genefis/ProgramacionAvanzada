@@ -6,7 +6,7 @@ package dataset;
 
 import java.util.Date;
 
-public class Cliente {
+public class Cliente   {
     int cod;
     String Name;
     Date fechaN;
