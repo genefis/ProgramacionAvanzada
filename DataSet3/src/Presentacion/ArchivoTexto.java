@@ -10,12 +10,12 @@ import java.util.Scanner;
  * Fecha:21/Junio/2022
  */
 public class ArchivoTexto {
-    static LogEstudianteTxt objLogClienteTxt = new LogEstudianteTxt();
+    static LogEstudianteTxt objLogEstudianteTxt = new LogEstudianteTxt();
     
     public static void main(String[] args) throws IOException {
         
-        AgregarClienteTxt();
-        ListarClientes();
+        AgregarEstudianteTxt();
+       ListarEstudiante();
     }
     
     void menuArhivoTexto() throws IOException{
@@ -29,34 +29,34 @@ public class ArchivoTexto {
             op = sc.nextInt();
             
             switch(op){
-                case 1: AgregarClienteTxt(); break;
-                case 2: EliminarClienteTxt(); break;
-                case 3: ListarClientes(); break;
+                case 1: AgregarEstudianteTxt(); break;
+                case 2: EliminarEstudianteTxt(); break;
+                case 3: ListarEstudiante(); break;
             }
         }
     }
 
-    static private void AgregarClienteTxt() throws IOException {
+    static private void AgregarEstudianteTxt() throws IOException {
         LogEstudianteTxt objLogClienteTxt = new LogEstudianteTxt();
         Estudiante estudiante = new Estudiante();
         // entrada
-        estudiante.setCod(1);
+        estudiante.setCod(444);
         estudiante.setNombre("Génesis");
-        estudiante.setFecNac("06122022");
-        if (objLogClienteTxt.ValidarId(estudiante))
-            System.out.println("cliente agregado");
+        estudiante.setCarrera("sistemas");
+        if (objLogClienteTxt.ValidarCod(estudiante))
+            System.out.println("Cliente agregado");
         else
-            System.out.println("codigo cliente no valido");
+            System.out.println("Cliente no agregado");
     }
     
-    private void EliminarClienteTxt() {
+    private void EliminarEstudianteTxt() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    static private void ListarClientes() {
+    static private void ListarEstudiante() {
         ArrayList<Estudiante> ArrayEstudiante = new ArrayList<Estudiante>();
-        objLogClienteTxt.ListarClientes(ArrayEstudiante);
-        for (Estudiante tmpCliente : ArrayEstudiante)
-            System.out.println(tmpCliente.toString());
+        objLogEstudianteTxt.ListarEstudiante(ArrayEstudiante);
+        for (Estudiante tmpEstudiante : ArrayEstudiante)
+            System.out.println(tmpEstudiante.toString());
     }
 }

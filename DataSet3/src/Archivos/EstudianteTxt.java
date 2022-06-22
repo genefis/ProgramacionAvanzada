@@ -15,13 +15,13 @@ import java.util.StringTokenizer;
  */
 public class EstudianteTxt {
     
-    public boolean AgregarCliente(Estudiante estudiante) throws IOException{
-       File f = new File("Cliente.txt");
+    public boolean AgregarEstudiante(Estudiante estudiante) throws IOException{
+       File f = new File("Estudiante.txt");
        FileWriter fw = new FileWriter(f,false);
        BufferedWriter bw = new BufferedWriter(fw);
        bw.write(Integer.toString(estudiante.getCod())+",");
        bw.write(estudiante.getNombre()+",");
-       bw.write(String.valueOf(estudiante.getFecNac())+"\n");
+       bw.write(String.valueOf(estudiante.getCarrera())+"\n");
        bw.close();
        fw.close();
        return true;
@@ -29,7 +29,7 @@ public class EstudianteTxt {
     
     
      public  ArrayList<Estudiante>
-            LeerCliente(ArrayList<Estudiante> ArrayEstudiante){        
+            LeerEstudiante(ArrayList<Estudiante> ArrayEstudiante){        
         File f = new File("estudiante.txt");        
         StringTokenizer st;
         Scanner entrada = null;

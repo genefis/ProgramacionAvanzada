@@ -11,22 +11,22 @@ import java.util.ArrayList;
 public class DataBase {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         ArrayList<Estudiante> ArrayEstudiante = new ArrayList<Estudiante>();
-        LogEstudianteDB objLogClienteDB = new LogEstudianteDB();
+        LogEstudianteDB objLogEstudianteDB = new LogEstudianteDB();
         //entrada
-      ArrayEstudiante.add(new Estudiante(1,"Génesis","05/2020"));
-      ArrayEstudiante.add(new Estudiante(2,"Vanessa","05/2020"));
-       ArrayEstudiante.add(new Estudiante(3,"Homero","05/2020"));
+      ArrayEstudiante.add(new Estudiante(1,"Génesis","Computación"));
+      ArrayEstudiante.add(new Estudiante(2,"Vanessa","Diseño"));
+       ArrayEstudiante.add(new Estudiante(3,"Homero","Economía"));
         
-        objLogClienteDB.InsertarClientes(ArrayEstudiante);
+        objLogEstudianteDB.InsertarEstudiante(ArrayEstudiante);
         
         //limpiando arrayList
         ArrayEstudiante = new ArrayList<Estudiante>();
        ArrayEstudiante.removeAll(ArrayEstudiante);
         
-        objLogClienteDB.RecuperarClientes(ArrayEstudiante);
+        objLogEstudianteDB.RecuperarEstudiante(ArrayEstudiante);
         
-        for (Estudiante objCliente: ArrayEstudiante)
-            System.out.println(objCliente.toString());
+        for (Estudiante objEstudiante: ArrayEstudiante)
+            System.out.println(objEstudiante.toString());
                     
                 
     }

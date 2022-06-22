@@ -1,5 +1,6 @@
 package Archivos;
-import Clases.Estudiante;
+
+import Clases.Reporte;
 import Logica.MiObjectOutputStream;
 import java.io.EOFException;
 import java.io.FileInputStream;
@@ -10,35 +11,36 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
+
+
 /**
- * @Génesis González
- * Fecha:21/Junio/2022
+ * @author Génesis González
  */
-public class EstudianteBin {
-    static String fichero = "EstudianteBin.dat";
-    public static boolean GrabarEstudianteBin(ArrayList<Estudiante> ArrayEstudiante) throws FileNotFoundException, IOException{
+public class ReporteBin {
+    static String fichero = "ReporteBin.dat";
+    public static boolean GrabarReporteBin(ArrayList<Reporte> ArrayReporte) throws FileNotFoundException, IOException{
         ObjectOutputStream oos = new ObjectOutputStream
                 (new FileOutputStream(fichero,false));  //elimine o cree
-        for (Estudiante estudiante:  ArrayEstudiante){
+        for (Reporte reporte:  ArrayReporte){
             // grabar todo el objeto
-            oos.writeObject(estudiante);
+            oos.writeObject(reporte);
         }
         oos.close();  // Se cierra al terminar.
         return true;
     }
     
-    public static void ImportarEstudianteBin(ArrayList<Estudiante> ArrayEstudiante) throws FileNotFoundException, IOException, ClassNotFoundException{
+    public static void ImportarReporteBin(ArrayList<Reporte> ArrayReporte) throws FileNotFoundException, IOException, ClassNotFoundException{
         try
         {
             ObjectInputStream ois = new ObjectInputStream(
                     new FileInputStream(fichero));
-            Estudiante aux = (Estudiante) ois.readObject();
+            Reporte aux = (Reporte) ois.readObject();
             while (aux!=null){
-                if (aux instanceof Estudiante) {               
+                if (aux instanceof Reporte) {               
                     //System.out.println(aux);
-                    ArrayEstudiante.add((Estudiante)aux);
+                    ArrayReporte.add((Reporte)aux);
                 }
-                aux = (Estudiante) ois.readObject();
+                aux = (Reporte) ois.readObject();
             }
             ois.close();
         }
@@ -53,7 +55,7 @@ public class EstudianteBin {
         
     }
     
-    public static void AddEstudianteBin (ArrayList<Estudiante> ArrayEstudiante)
+    public static void AddReporteBin (ArrayList<Reporte> ArrayReporte)
     {
         try
         {
@@ -63,8 +65,8 @@ public class EstudianteBin {
                     new FileOutputStream(fichero,true));
             // Se hace el new fuera del bucle, s�lo hay una instancia de persona.
             // Se debe usar entonces writeUnshared().
-            for (Estudiante estudiante:  ArrayEstudiante){
-                oos.writeUnshared(estudiante);
+            for (Reporte reporte:  ArrayReporte){
+                oos.writeUnshared(reporte);
         }
         oos.close();  // Se cierra al terminar.
             oos.close();
@@ -74,6 +76,5 @@ public class EstudianteBin {
         }
 
     }
-    
     
 }

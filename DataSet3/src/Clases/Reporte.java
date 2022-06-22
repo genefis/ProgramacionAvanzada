@@ -6,7 +6,7 @@ package Clases;
  * @author Génesis González
  */
 public class Reporte extends Estudiante {
-
+    private String materia;
     private double Bimestre1;
     private double Bimestre2;
     private double promedio;
@@ -14,15 +14,21 @@ public class Reporte extends Estudiante {
     public Reporte() {
     }
 
-    public Reporte(double Bimestre1, double Bimestre2) {
+    public Reporte(String materia, double Bimestre1, double Bimestre2, double promedio, int Cod, String nombre, String fecNac) {
+        super(Cod, nombre, fecNac);
+        this.materia = materia;
         this.Bimestre1 = Bimestre1;
         this.Bimestre2 = Bimestre2;
+        this.promedio = promedio;
     }
 
-    public Reporte(int Cod, String nombre, String fecNac, double Bimestre1, double Bimestre2) {
-        super(Cod, nombre, fecNac);
+    public Reporte(String materia, double Bimestre1, double Bimestre2, double promedio) {
+        this.materia = materia;
         this.Bimestre1 = Bimestre1;
         this.Bimestre2 = Bimestre2;
+        this.promedio = promedio;
     }
+
+    
 
 }

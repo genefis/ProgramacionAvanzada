@@ -11,52 +11,52 @@ import java.util.Scanner;
  * Fecha:21/Junio/2022
  */
 public class ArchivoBin {
-    static LogEstudianteBin objLogClienteBin = new LogEstudianteBin();
+    static LogEstudianteBin objLogEstudianteBin = new LogEstudianteBin();
     public static void main(String[] args) throws IOException, FileNotFoundException, ClassNotFoundException {
-        AgregarClienteBin();
-        ListarClienteBin();
+        AgregarEstudianteBin();
+        ListarEstudianteBin();
     }
              
     void menuArhivoTexto() throws IOException, FileNotFoundException, ClassNotFoundException{
         Scanner sc = new Scanner(System.in);
         int op=0;
         while (op<4){
-            System.out.println("Agregar     1");
-            System.out.println("Eliminar    2");
-            System.out.println("Listar      3");
-            System.out.println("Salir       4");
+            System.out.println("AGREGAR ESTUDIANTE  1");
+            System.out.println("ELIMINAR ESTUDIANTE    2");
+            System.out.println("LISTAR ESTUDIANTE     3");
+            System.out.println("SALIR     4");
             op = sc.nextInt();
             
             switch(op){
-                case 1: AgregarClienteBin(); break;
-                case 2: EliminarClienteBin(); break;
-                case 3: ListarClienteBin(); break;
+                case 1: AgregarEstudianteBin(); break;
+                case 2: EliminarEstudianteBin(); break;
+                case 3: ListarEstudianteBin(); break;
             }
         }
     }
 
-    static private void AgregarClienteBin() throws IOException {
+    static private void AgregarEstudianteBin() throws IOException {
         
         Estudiante estudiante = new Estudiante();
         // entrada
-        estudiante.setCod(5);
-        estudiante.setNombre("Francisco");
-        estudiante.setFecNac("07062200");
+        estudiante.setCod(333);
+        estudiante.setNombre("David");
+        estudiante.setCarrera("Computacion");
         
-        if (objLogClienteBin.ValidarId(estudiante))
-            System.out.println("cliente agregado");
+        if (objLogEstudianteBin.ValidarCod(estudiante))
+            System.out.println("Estudiante agregado");
         else
-            System.out.println("codigo cliente no valido");
+            System.out.println("Estudiante no agregado");
     
     }
 
-    private void EliminarClienteBin() {
+    private void EliminarEstudianteBin() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    static private void ListarClienteBin() throws IOException, FileNotFoundException, ClassNotFoundException {
+    static private void ListarEstudianteBin() throws IOException, FileNotFoundException, ClassNotFoundException {
         ArrayList<Estudiante> ArrayEstudiante = new ArrayList<Estudiante>();
-        objLogClienteBin.ListarClientes(ArrayEstudiante);
+        objLogEstudianteBin.ListarEstudiante(ArrayEstudiante);
         for (Estudiante tmpEstudiante : ArrayEstudiante)
             System.out.println(tmpEstudiante.toString());
     

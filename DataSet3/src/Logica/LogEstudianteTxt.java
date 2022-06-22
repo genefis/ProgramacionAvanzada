@@ -1,9 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Logica;
-
 import Archivos.EstudianteTxt;
 import Clases.Estudiante;
 import java.io.IOException;
@@ -14,18 +9,18 @@ import java.util.ArrayList;
  * FEcha  de junio
  */
 public class LogEstudianteTxt {
-    EstudianteTxt objClienteTxt = new EstudianteTxt();
-    public boolean ValidarId(Estudiante objCliente) throws IOException {
+    EstudianteTxt objEstudianteTxt = new EstudianteTxt();
+    public boolean ValidarCod(Estudiante objEstudiante) throws IOException {
         // valida si el codigo es correcto
-        if (objCliente.getCod() > 0){
+        if (objEstudiante.getCod() > 0){
             // agregar al archvio texto            
-            return objClienteTxt.AgregarCliente(objCliente);
+            return objEstudianteTxt.AgregarEstudiante(objEstudiante);
         }
         return false;
     }
 
-    public void ListarClientes(ArrayList<Estudiante> ArrayClientes){
-        objClienteTxt.LeerCliente(ArrayClientes);
+    public void ListarEstudiante(ArrayList<Estudiante> ArrayEstudiante){
+        objEstudianteTxt.LeerEstudiante(ArrayEstudiante);
     
     }
     

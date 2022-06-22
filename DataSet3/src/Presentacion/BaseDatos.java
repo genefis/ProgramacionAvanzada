@@ -16,22 +16,22 @@ public class BaseDatos {
             op = sc.nextInt();
             
             switch(op){
-                case 1: AgregarClienteDB(); break;
-                case 2: EliminarClienteDB(); break;
-                case 3: ListarClienteDB(); break;
+                case 1: AgregarEstudianteDB(); break;
+                case 2: EliminarEstudianteDB(); break;
+                case 3: ListarEstudianteDB(); break;
             }
         }
     }
 
-    private void AgregarClienteDB() {
+    private void AgregarEstudianteDB() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    private void EliminarClienteDB() {
+    private void EliminarEstudianteDB() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    private void ListarClienteDB() {
+    private void ListarEstudianteDB() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

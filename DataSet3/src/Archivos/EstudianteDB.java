@@ -11,13 +11,13 @@ public class EstudianteDB {
     DATConexion con = new DATConexion();
     ResultSet rs;
     PreparedStatement ps = null;
-    public boolean InsertarEstudianteDB(Estudiante estudiante) {
-        String sql = "INSERT INTO Estudiante (nombre, fecNac ) "  + "VALUES (?,?)";
+    public boolean InsertarEstudiante(Estudiante estudiante) {
+        String sql = "INSERT INTO Estudiante (nombre, carrera ) "  + "VALUES (?,?)";
         try {
             ps = con.AbrirConexion().prepareStatement(sql);
             //ps.setInt(1, objCliente.getId());
             ps.setString(1, estudiante.getNombre());
-            ps.setString(2, estudiante.getFecNac());
+            ps.setString(2, estudiante.getCarrera());
             ps.execute();
             //System.out.println("Cliente insertado");
             return true;
@@ -33,9 +33,9 @@ public class EstudianteDB {
         } 
     }
 
-    public ResultSet RecuperarCliente() throws ClassNotFoundException, SQLException {
+    public ResultSet RecuperarEstudiante() throws ClassNotFoundException, SQLException {
         java.sql.Statement st = con.AbrirConexion().createStatement();
-        String sentencia = "SELECT * FROM Cliente";
+        String sentencia = "SELECT * FROM tarea ";
         rs = st.executeQuery(sentencia);
         return rs;
     }

@@ -18,7 +18,7 @@ public class Estudiante implements Serializable{
     public Estudiante(int Cod, String nombre, String fecNac) {
         this.Cod = Cod;
         this.nombre = nombre;
-        this.carrera = fecNac;
+        this.carrera = carrera;
     }
 
     public void setCod(int Cod) {
@@ -29,8 +29,8 @@ public class Estudiante implements Serializable{
         this.nombre = nombre;
     }
 
-    public void setFecNac(String fecNac) {
-        this.carrera = fecNac;
+    public void setCarrera(String carrera) {
+        this.carrera = carrera;
     }
 
     public int getCod() {
@@ -41,14 +41,15 @@ public class Estudiante implements Serializable{
         return nombre;
     }
 
-    public String getFecNac() {
+    public String getCarrera() {
         return carrera;
     }
 
     @Override
     public String toString() {
-        return "Cliente{" + "Cod=" + Cod + ", nombre=" + nombre + ", fecNac=" + carrera + '}';
+        return "Estudiante{" + "Cod=" + Cod + ", nombre=" + nombre + ", carrera=" + carrera + '}';
     }
+
     
     
 }

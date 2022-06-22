@@ -13,15 +13,15 @@ import java.util.ArrayList;
  * @Génesis González
  */
 public class LogEstudianteDB {
-    EstudianteDB objClienteDB = new EstudianteDB();
+    EstudianteDB objEstudianteDB = new EstudianteDB();
 
-    public void InsertarClientes(ArrayList<Estudiante> ArrayClientes) {
-        for(Estudiante objCliente:ArrayClientes)
-              objClienteDB.InsertarEstudianteDB(objCliente);
+    public void InsertarEstudiante(ArrayList<Estudiante> ArrayEstudiante) {
+        for(Estudiante objEstudiante:ArrayEstudiante)
+              objEstudianteDB.InsertarEstudiante(objEstudiante);
     }
 
-    public void RecuperarClientes(ArrayList<Estudiante> ArrayClientes) throws ClassNotFoundException, SQLException {
-        ResultSet rs = objClienteDB.RecuperarCliente();
+    public void RecuperarEstudiante(ArrayList<Estudiante> ArrayEstudiantes) throws ClassNotFoundException, SQLException {
+        ResultSet rs = objEstudianteDB.RecuperarEstudiante();
         ResultSetMetaData rm = rs.getMetaData();
         //Recupera los campos de la tabla
         int columnCount = rm.getColumnCount();
@@ -35,17 +35,17 @@ public class LogEstudianteDB {
             Estudiante objAux = new Estudiante();
             for (String columnName : columnas) {
                 String value = rs.getString(columnName);
-                if (columnName.equals("id")) {
+                if (columnName.equals("cod")) {
                     objAux.setCod(Integer.parseInt(value));
                 }
                 if (columnName.equals("nombre")) {
                     objAux.setNombre(value);
                 }
-                if (columnName.equals("fecNac")) {
-                    objAux.setFecNac(value);
+                if (columnName.equals("carrera")) {
+                    objAux.setCarrera(value);
                 }
             }
-            ArrayClientes.add(objAux);
+            ArrayEstudiantes.add(objAux);
         }
         ///return ArrayClientes;
     }
