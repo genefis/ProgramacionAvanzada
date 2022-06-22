@@ -25,7 +25,7 @@ public class DataSet {
             
             switch(op){
                 case 1: objArchivoTexto.menuArhivoTexto(); break;
-                //case 2: menuBin(); break;
+              //  case 2: objArchiviBin. break;
                 //case 3: menuDB(); break;       
             }
             
